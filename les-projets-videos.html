@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Vidéo - Abdou Karim Keita</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .zigzag {
+            display: inline-block;
+            border-bottom: 4px solid yellow;
+            border-image: linear-gradient(90deg, yellow 50%, transparent 50%) 1;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.1 });
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="h-screen flex items-center justify-center bg-cover bg-center relative fade-in"
+        style="background-image: url('your-background-image.png');">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="relative z-10 flex w-10/12 mx-auto items-center">
+            <div class="w-1/2 space-y-4">
+                <h1 class="text-4xl font-bold">Je suis Abdou Karim Keita</h1>
+                <p class="text-lg">Éditeur vidéo depuis 3 ans maintenant.</p>
+                <div class="space-y-2">
+                    <p><i class="fas fa-envelope"></i> Email: <span
+                            class="text-blue-400">karimabdoukeita70@gmail.com</span></p>
+                    <p><i class="fas fa-phone"></i> Téléphone: <span class="text-blue-400">+33 782 273 438</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Adresse: <span class="text-blue-400">Montbéliard,
+                            France</span></p>
+                </div>
+            </div>
+
+            <div class="w-1/2 flex justify-center">
+                <img src="photo.jpg" class="w-48 h-48 rounded-full border-4 border-white floating"
+                    alt="Abdou Karim Keita">
+            </div>
+        </div>
+    </section>
+
+    <!-- Outils Section -->
+    <section class="py-20 text-center fade-in">
+        <h2 class="text-3xl font-bold mb-6">Outils que j'utilise</h2>
+        <div class="flex flex-wrap justify-center gap-8">
+            <img src="premiere-pro.png" class="w-20 floating" alt="Premiere Pro">
+            <img src="after-effects.png" class="w-20 floating" alt="After Effects">
+            <img src="capcut-logo-vector.svg" class="w-20 floating" alt="CapCut">
+            <img src="photoshop.png" class="w-20 floating" alt="Canva">
+            <img src="freepik-logo.png" class="w-20 floating" alt="Freepik">
+            <img src="envato-logo.png" class="w-20 floating" alt="Envato">
+
+        </div>
+    </section>
+
+    <!-- Projets Vidéo Section -->
+    <section class="py-20 fade-in">
+        <h2 class="text-3xl font-bold text-center mb-8">Mes Projets Vidéo</h2>
+        <p class="text-lg text-center font-bold mb-5">Plus de 500 vidéos montées</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-10/12 mx-auto">
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 1</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/6NpYlm5HDSA?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 2</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/qkyqFh4BOgI?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 3</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/jg38E97QyyU?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 4</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/8SOf6urxZUA?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 5</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/kr4meFqd7Rs?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 6</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/3_yBI_Jvhrc?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 7</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/KnCm3-_YsgU?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 8</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/bAzqF-WAFCs?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 9</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/eRjtsey5B_k?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 10</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/eRjtsey5B_k?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 11</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/jyNRRlrCAXo?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 12</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/YD3Pp2v2JEw?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 13</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/s3Hu30EGXlA?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 14</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/ue157_R7Myw?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 15</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/5rUN4BAAfow?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold">Vidéo 16</h3>
+                <p class="mb-5">Premiere Pro et Capcut</p>
+                <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/Rmau1nlykLA?rel=0&autoplay=0"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Témoignages Section -->
+    <section class="py-20 bg-gray-800 text-center fade-in">
+        <h2 class="text-3xl font-bold mb-6">Témoignages</h2>
+        <div class="flex justify-center space-x-8">
+            <div class="bg-gray-700 p-6 rounded-lg">
+                <img src="client1.webp" class="w-16 h-16 rounded-full mx-auto mb-4">
+                <p>Mamy Rafanomezantsoa.</p>
+                <p>Je recommande vivement Abdou Karim pour<br>
+                    son expertise en montage vidéo, sa rapidité, <br>
+                    son professionnalisme et son engagement à <br>
+                    produire des vidéos exceptionnelles</p>
+                <p class="text-yellow-400">★★★★★</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg">
+                <img src="client2.webp" class="w-16 h-16 rounded-full mx-auto mb-4">
+                <p>EL fahsi Ismail</p>
+                <p>Abdou Karim est un professionnel dynamique et intègre,<br>
+                    rapide, toujours prêt à aider, et maintient <br>
+                    des standards élevés. Un atout précieux !<br>
+                </p>
+                <p class="text-yellow-400">★★★★★</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Formulaire de Contact -->
+    <section class="py-20 text-center fade-in">
+        <h2 class="text-3xl font-bold mb-6">Contactez-moi</h2>
+        <form class="w-1/2 mx-auto bg-gray-800 p-6 rounded-lg">
+            <input type="text" placeholder="Nom" class="w-full p-2 mb-4 rounded-lg">
+            <input type="email" placeholder="Email" class="w-full p-2 mb-4 rounded-lg">
+            <textarea placeholder="Votre message" class="w-full p-2 mb-4 rounded-lg"></textarea>
+            <button class="bg-blue-500 px-6 py-2 rounded-lg text-white">Envoyer</button>
+        </form>
+    </section>
+
+    <!-- Chaîne YouTube -->
+    <section class="py-10 text-center bg-gray-900 fade-in">
+        <p class="text-lg">Je possède une chaîne YouTube d'actualité avec plus de <span
+                class="font-bold text-yellow-400">70 000 abonnés</span> !</p>
+        <a href="http://bit.ly/3DGkURt" target="" class="text-blue-400 underline">Découvrir ma chaîne</a>
+    </section>
+</body>
+
+</html>
